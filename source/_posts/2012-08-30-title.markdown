@@ -18,8 +18,14 @@ This is basically an implementation of [this great article](http://freespace.vir
         <canvas id="linearInterpolationNoise" width="350" height="350" class="canvas in-example"> </canvas>
     </div>
     <div class="bs-docs-box bs-docs-options" id="linearInterpolationOptions">
-        <label class="checkbox">
+        <label>
             <input type="checkbox" name="smooth" /> Smooth
+        </label>
+        <label>
+            <select name="interpolation">
+                <option value="linear">Linear Interpolation</option>
+                <option value="cosine">Cosine Interpolation</option>
+            </select>
         </label>
     </div>
     <div style="clear: both"></div>

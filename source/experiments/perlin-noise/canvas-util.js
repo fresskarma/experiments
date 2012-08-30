@@ -18,14 +18,26 @@ Canvas.prototype = {
             drawFunction.call(that, that.ctx, that.canvas.width, that.canvas.height, that.determineOptions(optionsContainer));
         }
 
-        if(typeof optionsContainer !== "undefined") {
-            $(optionsContainer).find('input').each(function() {
-                var obj = $(this);
-                obj.click(f);
-            });
-        }
+        this.bindOptionChangeEvents(optionsContainer, f);
 
         f();
+    },
+
+    bindOptionChangeEvents: function(optionsContainer, changeFunc) {
+        if(typeof optionsContainer === "undefined") {
+            return;
+        }
+
+        $(optionsContainer).find('input[type=checkbox]').each(function() {
+            var obj = $(this);
+            obj.click(changeFunc);
+        });
+
+        $(optionsContainer).find('select, input').each(function() {
+            var obj = $(this);
+            obj.change(changeFunc);
+        });
+
     },
 
     determineOptions: function(optionsContainer) {
@@ -34,9 +46,14 @@ Canvas.prototype = {
         }
 
         var options = {};
-        $(optionsContainer).find('input').each(function() {
+        $(optionsContainer).find('input[type=checkbox]').each(function() {
             var obj = $(this);
             options[obj.attr('name')] = obj.prop('checked');
+        });
+
+        $(optionsContainer).find('select').each(function() {
+            var obj = $(this);
+            options[obj.attr('name')] = obj.val();
         });
 
         return options;
