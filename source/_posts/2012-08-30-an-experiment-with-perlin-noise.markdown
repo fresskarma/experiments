@@ -6,6 +6,8 @@ comments: true
 categories:
 ---
 
+**This blogpost is not finished yet :)**
+
 This is basically an implementation of [this great article](http://freespace.virgin.net/hugo.elias/models/m_perlin.htm) on Perlin Noise in JavaScript, mainly so that I gain a little understanding on how it works.
 
 

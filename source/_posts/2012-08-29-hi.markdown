@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Hi!"
+date: 2012-08-29 18:58
+comments: true
+categories:
+---
+
+This is an Octopress powered blog on which I will post random stuff I experiment with. Stay tuned.
