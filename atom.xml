@@ -4,7 +4,7 @@
   <title><![CDATA[]]></title>
   <link href="http://x3ro.github.com/experiments/atom.xml" rel="self"/>
   <link href="http://x3ro.github.com/experiments/"/>
-  <updated>2012-08-30T19:04:54+02:00</updated>
+  <updated>2012-08-30T19:12:06+02:00</updated>
   <id>http://x3ro.github.com/experiments/</id>
   <author>
     <name><![CDATA[Lucas Jenss]]></name>
@@ -34,6 +34,9 @@
     <div class="bs-docs-box bs-docs-options" id="linearInterpolationOptions">
         <label>
             <input type="checkbox" name="smooth" /> Smooth
+        </label>
+        <label>
+            <input type="text" name="seed" value="Foo" /> Seed
         </label>
         <label>
             <select name="interpolation">

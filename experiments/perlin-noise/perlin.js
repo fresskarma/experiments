@@ -17,7 +17,7 @@ function smooth(dots) {
 
 
 function drawInterpolation(ctx, width, height, options) {
-    Math.seedrandom("Foo");
+    Math.seedrandom(options.seed);
 
     this.clear(ctx);
 
