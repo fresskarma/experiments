@@ -34,8 +34,11 @@ function drawInterpolation(ctx, width, height, options) {
     }
 
     for(i = 0; i < dots.length; i++) {
-        ctx.fillStyle = "rgb(0, 0, 0)";
-        ctx.fillRect(dots[i][0], dots[i][1], 4, 4);
+        ctx.fillStyle = "rgb(80, 80, 80)";
+        ctx.beginPath();
+        // 2.5px dot radius (+1 on both coords for centering the dot on the coordinate)
+        ctx.arc(dots[i][0]+1, dots[i][1]+1, 2.5, 0, Math.PI*2, false);
+        ctx.fill();
     }
 
 
