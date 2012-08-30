@@ -72,6 +72,7 @@ Canvas.prototype = {
     },
 
     connectTheDots: function (dots, interpolationFunction) {
+        this.ctx.strokeStyle = "rgb(150, 150, 150)";
         for(var d = 0; d < (dots.length - 1); d++) {
             var a = dots[d];
             var b = dots[d + 1];
