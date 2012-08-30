@@ -33,9 +33,14 @@ Canvas.prototype = {
             obj.click(changeFunc);
         });
 
-        $(optionsContainer).find('select, input').each(function() {
+        $(optionsContainer).find('select').each(function() {
             var obj = $(this);
             obj.change(changeFunc);
+        });
+
+        $(optionsContainer).find('input[type=text]').each(function() {
+            var obj = $(this);
+            obj.bind('keyup', changeFunc);
         });
 
     },
@@ -51,7 +56,7 @@ Canvas.prototype = {
             options[obj.attr('name')] = obj.prop('checked');
         });
 
-        $(optionsContainer).find('select').each(function() {
+        $(optionsContainer).find('select,input').not('input[type=checkbox]').each(function() {
             var obj = $(this);
             options[obj.attr('name')] = obj.val();
         });

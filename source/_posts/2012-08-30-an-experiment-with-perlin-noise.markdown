@@ -24,6 +24,9 @@ This is basically an implementation of [this great article](http://freespace.vir
             <input type="checkbox" name="smooth" /> Smooth
         </label>
         <label>
+            <input type="text" name="seed" value="Foo" /> Seed
+        </label>
+        <label>
             <select name="interpolation">
                 <option value="linear">Linear Interpolation</option>
                 <option value="cosine">Cosine Interpolation</option>
