@@ -28,7 +28,8 @@ This is basically an implementation of [this great article](http://freespace.vir
         </label>
         <label>
             <select name="interpolation">
-                <option value="linear">Linear Interpolation</option>
+                <option value="none">None</option>
+                <option value="linear" selected="selected">Linear Interpolation</option>
                 <option value="cosine">Cosine Interpolation</option>
             </select>
         </label>

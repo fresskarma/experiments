@@ -49,6 +49,9 @@ function drawInterpolation(ctx, width, height, options) {
         case 'cosine':
             this.connectTheDots(dots, cosine_interpolate);
             break;
+        case 'none':
+        default:
+            // "None" - Don't connect the dots :)
     }
 
     ctx.restore();
