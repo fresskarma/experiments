@@ -1,4 +1,8 @@
-function Canvas(canvasId) {
+var Canvas;
+
+;(function($) {
+
+Canvas = function (canvasId) {
     this.canvasId = canvasId;
     this.canvas = document.getElementById(this.canvasId);
     this.ctx = this.canvas.getContext('2d');
@@ -6,8 +10,36 @@ function Canvas(canvasId) {
 
 Canvas.prototype = {
 
-    drawWithFunction: function (drawFunction) {
-        drawFunction.call(this, this.ctx, this.canvas.width, this.canvas.height);
+    drawWithFunction: function (drawFunction, optionsContainer) {
+        var options = {};
+        var that = this;
+
+        var f = function() {
+            drawFunction.call(that, that.ctx, that.canvas.width, that.canvas.height, that.determineOptions(optionsContainer));
+        }
+
+        if(typeof optionsContainer !== "undefined") {
+            $(optionsContainer).find('input').each(function() {
+                var obj = $(this);
+                obj.click(f);
+            });
+        }
+
+        f();
+    },
+
+    determineOptions: function(optionsContainer) {
+        if(typeof optionsContainer === "undefined") {
+            return {};
+        }
+
+        var options = {};
+        $(optionsContainer).find('input').each(function() {
+            var obj = $(this);
+            options[obj.attr('name')] = obj.prop('checked');
+        });
+
+        return options;
     },
 
     clear: function (ctx) {
@@ -34,3 +66,6 @@ Canvas.prototype = {
     }
 
 };
+
+
+})(jQuery);

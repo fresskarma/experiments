@@ -16,7 +16,7 @@ function smooth(dots) {
 
 
 
-function drawLinearInterpolation(ctx, width, height) {
+function drawLinearInterpolation(ctx, width, height, options) {
     Math.seedrandom("Foo");
 
     this.clear(ctx);
@@ -29,7 +29,9 @@ function drawLinearInterpolation(ctx, width, height) {
         dots.push([x, y]);
     }
 
-    smooth(dots);
+    if(options.smooth) {
+        smooth(dots);
+    }
 
     for(i = 0; i < dots.length; i++) {
         ctx.fillStyle = "rgb(0, 0, 0)";
@@ -43,7 +45,7 @@ function drawLinearInterpolation(ctx, width, height) {
 }
 
 function init() {
-    new Canvas("linearInterpolationNoise").drawWithFunction(drawLinearInterpolation);
+    new Canvas("linearInterpolationNoise").drawWithFunction(drawLinearInterpolation, '#linearInterpolationOptions');
 }
 
 document.addEventListener("DOMContentLoaded", init, false);

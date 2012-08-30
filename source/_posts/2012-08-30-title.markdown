@@ -17,9 +17,9 @@ This is basically an implementation of [this great article](http://freespace.vir
     <div class="canvas-div">
         <canvas id="linearInterpolationNoise" width="350" height="350" class="canvas in-example"> </canvas>
     </div>
-    <div class="bs-docs-box bs-docs-options">
+    <div class="bs-docs-box bs-docs-options" id="linearInterpolationOptions">
         <label class="checkbox">
-            <input type="checkbox"> Smooth
+            <input type="checkbox" name="smooth" /> Smooth
         </label>
     </div>
     <div style="clear: both"></div>
