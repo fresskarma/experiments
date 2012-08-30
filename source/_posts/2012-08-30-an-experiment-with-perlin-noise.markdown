@@ -11,8 +11,15 @@ categories:
 This is basically an implementation of [this great article](http://freespace.virgin.net/hugo.elias/models/m_perlin.htm) on Perlin Noise in JavaScript, mainly so that I gain a little understanding on how it works.
 
 
-### Noise function with linear interpolation
+### The Noise Function
 
+A noise function is the foundation of the perlin noise that we want to generate. Wikipedia defines a function as *[...] a relation between a set of inputs and a set of permissible outputs [...]*, and in our case we have a single input, the **Seed**, and an out
+
+<div markdown="0">
+\[
+    f(Seed, Time) \rightarrow Noise
+ \]
+</div>
 
 <!-- We need these so Maruku doesn't cry -->
 <div class="text-right bs-docs-box">
