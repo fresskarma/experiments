@@ -26,6 +26,10 @@
   <script src="/experiments/javascripts/ender.js"></script>
   <script src="/experiments/javascripts/octopress.js" type="text/javascript"></script>
 
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.93/jsxgraphcore.js"> </script>
+
   <link href="/experiments/atom.xml" rel="alternate" title="" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -78,14 +82,25 @@
 
 <p>This is basically an implementation of <a href="http://freespace.virgin.net/hugo.elias/models/m_perlin.htm">this great article</a> on Perlin Noise in JavaScript, mainly so that I gain a little understanding on how it works.</p>
 
-<h3>Noise function with linear interpolation</h3>
+<h3>The Noise Function</h3>
+
+<p>A noise function is the foundation of the perlin noise that we want to generate. You are probably familiar the <a href="http://en.wikipedia.org/wiki/Function_(mathematics">mathematical definition</a>) of a function, i.e. <em>[&#8230;] a relation between a set of inputs and a set of permissible outputs [&#8230;]</em>.</p>
+
+<div markdown="0">
+\[
+    f(Seed, Time) \rightarrow Noise
+ \]
+</div>
+
+
+
 
 <!-- We need these so Maruku doesn't cry -->
 
 
 <div class="text-right bs-docs-box">
     <div class="canvas-div">
-        <canvas id="linearInterpolationNoise" width="350" height="350" class="canvas in-example"> </canvas>
+        <div id="testy" style="height: 350px; width: 350px;"> </div>
     </div>
     <div class="bs-docs-box bs-docs-options" id="linearInterpolationOptions">
         <label>
@@ -96,7 +111,8 @@
         </label>
         <label>
             <select name="interpolation">
-                <option value="linear">Linear Interpolation</option>
+                <option value="none">None</option>
+                <option value="linear" selected="selected">Linear Interpolation</option>
                 <option value="cosine">Cosine Interpolation</option>
             </select>
         </label>
@@ -117,6 +133,12 @@
 
 
 <script src="/experiments/experiments/perlin-noise/canvas-util.js" type="text/javascript"> </script>
+
+
+<script src="/experiments/experiments/perlin-noise/perlin-lib.js" type="text/javascript"> </script>
+
+
+<script src="/experiments/experiments/perlin-noise/interpolation-graph.js" type="text/javascript"> </script>
 
 
 <script src="/experiments/experiments/perlin-noise/perlin.js" type="text/javascript"> </script>

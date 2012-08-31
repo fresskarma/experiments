@@ -49,6 +49,9 @@ function drawInterpolation(ctx, width, height, options) {
         case 'cosine':
             this.connectTheDots(dots, cosine_interpolate);
             break;
+        case 'none':
+        default:
+            // "None" - Don't connect the dots :)
     }
 
     ctx.restore();
@@ -56,7 +59,9 @@ function drawInterpolation(ctx, width, height, options) {
 }
 
 function init() {
-    new Canvas("linearInterpolationNoise").drawWithFunction(drawInterpolation, '#linearInterpolationOptions');
+    //new Canvas("linearInterpolationNoise").drawWithFunction(drawInterpolation, '#linearInterpolationOptions');
+    new InterpolationGraph("testy", "#linearInterpolationOptions");
+
 }
 
 document.addEventListener("DOMContentLoaded", init, false);
