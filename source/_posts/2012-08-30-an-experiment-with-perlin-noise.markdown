@@ -15,7 +15,7 @@ This is basically an implementation of [this great article](http://freespace.vir
 
 
 
-A noise function is the foundation of the perlin noise that we want to generate. You are probably familiar the [mathematical definition](http://en.wikipedia.org/wiki/Function_(mathematics)) of a function, i.e. *[...] a relation between a set of inputs and a set of permissible outputs [...]*.
+A noise function is the foundation of the perlin noise that we want to generate. You are probably familiar the [mathematical definition](http://en.wikipedia.org/wiki/Function_(mathematics\)) of a function, i.e. *[...] a relation between a set of inputs and a set of permissible outputs [...]*.
 
 
 
