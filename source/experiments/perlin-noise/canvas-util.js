@@ -1,6 +1,65 @@
+var Util;
 var Canvas;
 
 ;(function($) {
+
+
+Util = {
+    invokeFunctionWithOptions: function(optionsContainer, context, theFunction) {
+        var f = function() {
+            theFunction.call(context, Util.determineOptions(optionsContainer));
+        }
+
+        Util.bindOptionChangeEvents(optionsContainer, f);
+
+        f();
+    },
+
+    bindOptionChangeEvents: function(optionsContainer, changeFunc) {
+        if(typeof optionsContainer === "undefined") {
+            return;
+        }
+
+        $(optionsContainer).find('input[type=checkbox]').each(function() {
+            var obj = $(this);
+            obj.click(changeFunc);
+        });
+
+        $(optionsContainer).find('select').each(function() {
+            var obj = $(this);
+            obj.change(changeFunc);
+        });
+
+        $(optionsContainer).find('input[type=text]').each(function() {
+            var obj = $(this);
+            obj.bind('keyup', changeFunc);
+        });
+
+    },
+
+    determineOptions: function(optionsContainer) {
+        if(typeof optionsContainer === "undefined") {
+            return {};
+        }
+
+        var options = {};
+        $(optionsContainer).find('input[type=checkbox]').each(function() {
+            var obj = $(this);
+            options[obj.attr('name')] = obj.prop('checked');
+        });
+
+        $(optionsContainer).find('select,input').not('input[type=checkbox]').each(function() {
+            var obj = $(this);
+            options[obj.attr('name')] = obj.val();
+        });
+
+        return options;
+    },
+};
+
+
+
+
 
 Canvas = function (canvasId) {
     this.canvasId = canvasId;

@@ -13,7 +13,11 @@ This is basically an implementation of [this great article](http://freespace.vir
 
 ### The Noise Function
 
-A noise function is the foundation of the perlin noise that we want to generate. Wikipedia defines a function as *[...] a relation between a set of inputs and a set of permissible outputs [...]*, and in our case we have a single input, the **Seed**, and an out
+
+
+A noise function is the foundation of the perlin noise that we want to generate. You are probably familiar the [mathematical definition](http://en.wikipedia.org/wiki/Function_(mathematics)) of a function, i.e. *[...] a relation between a set of inputs and a set of permissible outputs [...]*.
+
+
 
 <div markdown="0">
 \[
@@ -24,7 +28,7 @@ A noise function is the foundation of the perlin noise that we want to generate.
 <!-- We need these so Maruku doesn't cry -->
 <div class="text-right bs-docs-box">
     <div class="canvas-div">
-        <canvas id="linearInterpolationNoise" width="350" height="350" class="canvas in-example"> </canvas>
+        <div id="testy" style="height: 350px; width: 350px;"> </div>
     </div>
     <div class="bs-docs-box bs-docs-options" id="linearInterpolationOptions">
         <label>
@@ -45,9 +49,10 @@ A noise function is the foundation of the perlin noise that we want to generate.
 </div>
 <!-- We need these so Maruku doesn't cry -->
 
-
 <!-- We need these so Maruku doesn't cry -->
 <script src="/experiments/perlin-noise/vendor/seedrandom.js" type="text/javascript"> </script>
 <script src="/experiments/perlin-noise/canvas-util.js" type="text/javascript"> </script>
+<script src="/experiments/perlin-noise/perlin-lib.js" type="text/javascript"> </script>
+<script src="/experiments/perlin-noise/interpolation-graph.js" type="text/javascript"> </script>
 <script src="/experiments/perlin-noise/perlin.js" type="text/javascript"> </script>
 <!-- We need these so Maruku doesn't cry -->
