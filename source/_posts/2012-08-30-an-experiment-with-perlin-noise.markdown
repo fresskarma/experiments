@@ -47,10 +47,14 @@ A noise function is the foundation of the perlin noise that we want to generate.
     </div>
     <div style="clear: both"></div>
 </div>
+
+<canvas id="foobar" style="border: 1px solid red; width: 350px; height: 350px;"> </canvas>
+
 <!-- We need these so Maruku doesn't cry -->
 
 <!-- We need these so Maruku doesn't cry -->
 <script src="/experiments/perlin-noise/vendor/seedrandom.js" type="text/javascript"> </script>
+<script src="/experiments/perlin-noise/random.js" type="text/javascript"> </script>
 <script src="/experiments/perlin-noise/canvas-util.js" type="text/javascript"> </script>
 <script src="/experiments/perlin-noise/perlin-lib.js" type="text/javascript"> </script>
 <script src="/experiments/perlin-noise/interpolation-graph.js" type="text/javascript"> </script>

@@ -25,14 +25,15 @@ InterpolationGraph.prototype = {
     draw: function(options) {
         this.clear();
 
-        Math.seedrandom(options.seed);
-        var data = [];
-        for(var i=0; i<20; i++) {
-            data.push(Math.random());
-        }
+        var random = new Random(options.seed);
 
-        this.graph = this.jxg.create('functiongraph', [function(x){
-            return Perlin.pickValueFor(data, x);
+        this.graph = this.jxg.create('functiongraph', [function(x) {
+            var a = random.pickValueFor(x);
+            var b = random.pickValueFor(x+1);
+            var xx = x - Math.floor(x);
+
+            return cosine_interpolate(a, b, xx);
+            //return random.pickValueFor(x);
         },-10, 10]);
     }
 
